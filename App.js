@@ -10,6 +10,7 @@ import AppLoading from "expo-app-loading";
 import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
 import Fonts from "./components/ui/Fonts";
+import { StatusBar } from "expo-status-bar";
 
 // Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
@@ -84,6 +85,8 @@ export default function App() {
   
 
   return (
+    <>
+    <StatusBar/>
     <LinearGradient colors={[Colors.primary700, Colors.accent500]} style={styles.rootScreen} onLayout={onLayoutRootView}>
       <ImageBackground
         source={require("./assets/images/background.png")}
@@ -96,6 +99,7 @@ export default function App() {
         </SafeAreaView>
       </ImageBackground>
     </LinearGradient>
+    </>
   );
 }
 
